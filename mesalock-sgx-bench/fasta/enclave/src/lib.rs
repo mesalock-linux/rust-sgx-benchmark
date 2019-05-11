@@ -37,9 +37,7 @@ extern crate sgx_types;
 #[macro_use]
 extern crate sgx_tstd as std;
 use sgx_types::*;
-use std::string::String;
 use std::vec::Vec;
-use std::slice;
 use std::io::{self, Write};
 
 

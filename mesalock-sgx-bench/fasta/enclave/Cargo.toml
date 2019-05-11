@@ -16,5 +16,5 @@ crate-type = ["staticlib"]
 default = []
 
 [target.'cfg(not(target_env = "sgx"))'.dependencies]
-sgx_types = { path = "../../../sgx_types" }
-sgx_tstd = { path = "../../../sgx_tstd" }
+sgx_types = { path = "../../../rust-sgx-sdk/sgx_types" }
+sgx_tstd = { path = "../../../rust-sgx-sdk/sgx_tstd" }

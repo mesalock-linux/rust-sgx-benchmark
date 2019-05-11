@@ -32,6 +32,7 @@
 
 #include <unistd.h>
 #include <pwd.h>
+#include <time.h>
 #define MAX_PATH FILENAME_MAX
 
 #include "sgx_urts.h"
@@ -236,11 +237,20 @@ int SGX_CDECL main(int argc, char *argv[])
     const char* str = "This is normal world string passed into enclave!\n";
     size_t len = strlen(str);
 
+    struct timespec tstart={0,0}, tend={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &tstart);
+
     sgx_ret = uniform(global_eid, &enclave_ret);
 //    sgx_ret = say_something(global_eid,
 //	                        &enclave_ret,
 //							(const uint8_t *) str,
 //							len);
+
+
+    clock_gettime(CLOCK_MONOTONIC, &tend);
+    printf("ecall took about %.5f seconds\n",
+           ((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) -
+           ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec));
 
     if(sgx_ret != SGX_SUCCESS) {
         print_error_message(sgx_ret);
