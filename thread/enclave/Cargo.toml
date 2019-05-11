@@ -1,0 +1,19 @@
+[package]
+name = "Threadsampleenclave"
+version = "1.0.0"
+authors = ["Baidu"]
+
+
+[profile.release]
+incremental = false
+lto = true
+
+[lib]
+name = "threadsampleenclave"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_tstd = { path = "../../../sgx_tstd" }

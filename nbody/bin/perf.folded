@@ -1,0 +1,4 @@
+Unrecognized line: [kernel.kallsyms] with build id 75d5f3d70589eb4afd86d750694b5075cf35348d not found, continuing without symbols at FlameGraph/stackcollapse-perf.pl line 339, <> line 1.
+app;[unknown];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]] 1
+app;[unknown];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]] 1
+perf;[unknown];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]];[[kernel.kallsyms]] 6

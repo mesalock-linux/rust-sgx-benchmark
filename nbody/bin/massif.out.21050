@@ -1,0 +1,1377 @@
+desc: (none)
+cmd: ./app
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3459968
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3469662
+mem_heap_B=73040
+mem_heap_extra_B=168
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=3476843
+mem_heap_B=74912
+mem_heap_extra_B=320
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=3484007
+mem_heap_B=74945
+mem_heap_extra_B=343
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=3492163
+mem_heap_B=75972
+mem_heap_extra_B=516
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=3501110
+mem_heap_B=77121
+mem_heap_extra_B=727
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=3510032
+mem_heap_B=78618
+mem_heap_extra_B=1022
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=3518253
+mem_heap_B=80212
+mem_heap_extra_B=1292
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=3523521
+mem_heap_B=81035
+mem_heap_extra_B=1421
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=3530631
+mem_heap_B=82106
+mem_heap_extra_B=1614
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=3536307
+mem_heap_B=83098
+mem_heap_extra_B=1774
+mem_stacks_B=0
+heap_tree=detailed
+n6: 83098 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 5002 in 29 places, all below massif's threshold (1.00%)
+ n2: 2480 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 2320 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2320 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2320 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2320 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2320 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 2320 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 2320 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 2320 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 160 in 1 place, below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+ n1: 992 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 992 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 928 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 928 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 928 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 928 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 928 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 928 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 928 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 928 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+   n0: 64 in 1 place, below massif's threshold (1.00%)
+ n1: 864 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 864 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=3541874
+mem_heap_B=84105
+mem_heap_extra_B=1959
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=3549339
+mem_heap_B=85538
+mem_heap_extra_B=2206
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=3558305
+mem_heap_B=87206
+mem_heap_extra_B=2474
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=3565987
+mem_heap_B=88428
+mem_heap_extra_B=2684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=3571631
+mem_heap_B=89256
+mem_heap_extra_B=2832
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=3577891
+mem_heap_B=90356
+mem_heap_extra_B=3044
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=3586390
+mem_heap_B=91700
+mem_heap_extra_B=3292
+mem_stacks_B=0
+heap_tree=detailed
+n9: 91700 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n2: 5200 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 5040 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 5040 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 5040 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 5040 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 5040 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 5040 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 5040 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 5040 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 160 in 1 place, below massif's threshold (1.00%)
+ n0: 4216 in 28 places, all below massif's threshold (1.00%)
+ n1: 2208 0x63A98C1: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 2208 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2208 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2208 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2208 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2208 0x40106C8: call_init.part.0 (dl-init.c:72)
+       n1: 2208 0x40107D9: _dl_init (dl-init.c:30)
+        n0: 2208 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n1: 2080 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 2080 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2016 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2016 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2016 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2016 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 2016 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 2016 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 2016 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 2016 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+   n0: 64 in 1 place, below massif's threshold (1.00%)
+ n1: 1676 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 1676 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n2: 1676 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 991 0x63A09F4: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 991 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 991 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 991 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 991 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+         n1: 991 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+          n1: 991 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+           n1: 991 0x40106C8: call_init.part.0 (dl-init.c:72)
+            n1: 991 0x40107D9: _dl_init (dl-init.c:30)
+             n0: 991 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+    n0: 685 in 3 places, all below massif's threshold (1.00%)
+ n1: 1408 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1408 in 6 places, all below massif's threshold (1.00%)
+ n1: 1152 0x639FB19: google::protobuf::EnumDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1152 0x63A14DC: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1152 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1152 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1152 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1152 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1152 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1152 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 1152 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 1152 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=3591801
+mem_heap_B=92567
+mem_heap_extra_B=3465
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3597392
+mem_heap_B=93658
+mem_heap_extra_B=3654
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3602695
+mem_heap_B=94645
+mem_heap_extra_B=3835
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3612368
+mem_heap_B=96536
+mem_heap_extra_B=4160
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=3619602
+mem_heap_B=98169
+mem_heap_extra_B=4399
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=3623589
+mem_heap_B=98959
+mem_heap_extra_B=4505
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=3632204
+mem_heap_B=99086
+mem_heap_extra_B=4554
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=3642023
+mem_heap_B=99265
+mem_heap_extra_B=4631
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=3650027
+mem_heap_B=99383
+mem_heap_extra_B=4657
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=3654259
+mem_heap_B=99572
+mem_heap_extra_B=4684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=3661962
+mem_heap_B=99971
+mem_heap_extra_B=4789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=3667845
+mem_heap_B=100308
+mem_heap_extra_B=4868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=3673555
+mem_heap_B=100636
+mem_heap_extra_B=4940
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=3677701
+mem_heap_B=100971
+mem_heap_extra_B=5021
+mem_stacks_B=0
+heap_tree=detailed
+n10: 100971 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n2: 7280 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 6640 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 6640 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 6640 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 6640 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 6640 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 6640 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 6640 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 6640 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 640 in 1 place, below massif's threshold (1.00%)
+ n0: 6702 in 35 places, all below massif's threshold (1.00%)
+ n1: 3312 0x63A98C1: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 3312 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 3312 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 3312 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 3312 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 3312 0x40106C8: call_init.part.0 (dl-init.c:72)
+       n1: 3312 0x40107D9: _dl_init (dl-init.c:30)
+        n0: 3312 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n1: 2912 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 2912 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2656 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2656 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2656 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2656 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 2656 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 2656 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 2656 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 2656 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+   n0: 256 in 1 place, below massif's threshold (1.00%)
+ n2: 2477 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 2413 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n2: 2413 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1263 0x63A09F4: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1263 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1263 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1263 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1263 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+         n1: 1263 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+          n1: 1263 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+           n1: 1263 0x40106C8: call_init.part.0 (dl-init.c:72)
+            n1: 1263 0x40107D9: _dl_init (dl-init.c:30)
+             n0: 1263 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+    n0: 1150 in 5 places, all below massif's threshold (1.00%)
+  n0: 64 in 2 places, all below massif's threshold (1.00%)
+ n1: 2080 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 2080 in 6 places, all below massif's threshold (1.00%)
+ n1: 1296 0x639FB19: google::protobuf::EnumDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1296 0x63A14DC: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1296 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1296 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1296 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1296 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1296 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1296 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 1296 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 1296 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n1: 1120 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1120 in 2 places, all below massif's threshold (1.00%)
+ n1: 1088 0x63A0DC9: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1088 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1088 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1088 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1088 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1088 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1088 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1088 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 1088 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 1088 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+#-----------
+snapshot=33
+#-----------
+time=3683807
+mem_heap_B=101213
+mem_heap_extra_B=5043
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=3687857
+mem_heap_B=97754
+mem_heap_extra_B=4406
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=3693936
+mem_heap_B=92677
+mem_heap_extra_B=3451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=3698007
+mem_heap_B=88937
+mem_heap_extra_B=2855
+mem_stacks_B=0
+heap_tree=detailed
+n9: 88937 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 4656 in 36 places, all below massif's threshold (1.00%)
+ n2: 3680 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 3200 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 3200 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 3200 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 3200 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 3200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 3200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 3200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 3200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 480 in 1 place, below massif's threshold (1.00%)
+ n1: 1656 0x63A98C1: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1656 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1656 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1656 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1656 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1656 0x40106C8: call_init.part.0 (dl-init.c:72)
+       n1: 1656 0x40107D9: _dl_init (dl-init.c:30)
+        n0: 1656 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n1: 1472 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 1472 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1280 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1280 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1280 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1280 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1280 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1280 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 1280 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 1280 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+   n0: 192 in 1 place, below massif's threshold (1.00%)
+ n2: 1360 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1200 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1200 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1200 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1200 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 160 in 1 place, below massif's threshold (1.00%)
+ n1: 1184 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1184 in 6 places, all below massif's threshold (1.00%)
+ n2: 1169 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 1169 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n1: 1169 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n0: 1169 in 6 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=3704052
+mem_heap_B=83868
+mem_heap_extra_B=1916
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=3708101
+mem_heap_B=80386
+mem_heap_extra_B=1278
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=3714453
+mem_heap_B=79328
+mem_heap_extra_B=1136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=3831769
+mem_heap_B=79392
+mem_heap_extra_B=1136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=3838116
+mem_heap_B=79872
+mem_heap_extra_B=1216
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=3842396
+mem_heap_B=80256
+mem_heap_extra_B=1264
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=3848734
+mem_heap_B=81297
+mem_heap_extra_B=1463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=3857462
+mem_heap_B=82801
+mem_heap_extra_B=1759
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=3864059
+mem_heap_B=84128
+mem_heap_extra_B=2000
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=3872937
+mem_heap_B=85703
+mem_heap_extra_B=2225
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=3882407
+mem_heap_B=87642
+mem_heap_extra_B=2510
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=3891573
+mem_heap_B=89624
+mem_heap_extra_B=2776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=3900735
+mem_heap_B=91704
+mem_heap_extra_B=3112
+mem_stacks_B=0
+heap_tree=detailed
+n8: 91704 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 7080 in 63 places, all below massif's threshold (1.00%)
+ n2: 4080 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 2960 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2960 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2960 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2960 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n2: 2960 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 2960 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+        n1: 2960 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 2960 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 2960 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 1120 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1120 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1120 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 1120 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1120 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 1120 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1120 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1120 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 2576 0x63A15B9: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 2576 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2576 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2576 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 2576 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2576 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 2576 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 2576 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 2576 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1600 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 1600 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1152 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1152 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1152 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1152 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n2: 1152 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1152 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+         n1: 1152 0x40106C8: call_init.part.0 (dl-init.c:72)
+          n1: 1152 0x40107D9: _dl_init (dl-init.c:30)
+           n0: 1152 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 448 in 1 place, below massif's threshold (1.00%)
+ n2: 1360 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1200 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1200 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1200 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1200 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 160 in 1 place, below massif's threshold (1.00%)
+ n2: 1248 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 1248 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n1: 1248 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n0: 1248 in 6 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=3904809
+mem_heap_B=92425
+mem_heap_extra_B=3231
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=3908870
+mem_heap_B=93105
+mem_heap_extra_B=3367
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=3913173
+mem_heap_B=93862
+mem_heap_extra_B=3498
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=3917266
+mem_heap_B=94505
+mem_heap_extra_B=3623
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=3921268
+mem_heap_B=95293
+mem_heap_extra_B=3771
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=3925718
+mem_heap_B=96147
+mem_heap_extra_B=3909
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=3930214
+mem_heap_B=97090
+mem_heap_extra_B=4038
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=3934446
+mem_heap_B=97927
+mem_heap_extra_B=4177
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=3938923
+mem_heap_B=98870
+mem_heap_extra_B=4306
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=3943365
+mem_heap_B=99772
+mem_heap_extra_B=4444
+mem_stacks_B=0
+heap_tree=detailed
+n9: 99772 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 7488 in 62 places, all below massif's threshold (1.00%)
+ n2: 6720 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 4480 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 4480 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 4480 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 4480 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n2: 4480 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 4480 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+        n1: 4480 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 4480 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 4480 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2240 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2240 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2240 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 2240 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2240 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 2240 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 2240 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 2240 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 4048 0x63A15B9: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 4048 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 4048 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 4048 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 4048 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 4048 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 4048 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 4048 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 4048 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 2688 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 2688 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1792 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1792 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1792 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1792 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n2: 1792 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1792 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+         n1: 1792 0x40106C8: call_init.part.0 (dl-init.c:72)
+          n1: 1792 0x40107D9: _dl_init (dl-init.c:30)
+           n0: 1792 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 896 in 1 place, below massif's threshold (1.00%)
+ n2: 2364 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 2364 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n2: 2364 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1274 0x63A09F4: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1274 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1274 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1274 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1274 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+         n2: 1274 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+          n1: 1274 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+           n1: 1274 0x40106C8: call_init.part.0 (dl-init.c:72)
+            n1: 1274 0x40107D9: _dl_init (dl-init.c:30)
+             n0: 1274 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 1090 in 5 places, all below massif's threshold (1.00%)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n2: 1360 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1200 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1200 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1200 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1200 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 160 in 1 place, below massif's threshold (1.00%)
+ n1: 1344 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1344 in 6 places, all below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=3947414
+mem_heap_B=100666
+mem_heap_extra_B=4582
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=3951546
+mem_heap_B=101563
+mem_heap_extra_B=4725
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=3955603
+mem_heap_B=102462
+mem_heap_extra_B=4866
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=3963844
+mem_heap_B=102781
+mem_heap_extra_B=4923
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=3965746
+mem_heap_B=102934
+mem_heap_extra_B=4978
+mem_stacks_B=0
+heap_tree=peak
+n8: 102934 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 9050 in 63 places, all below massif's threshold (1.00%)
+ n2: 7520 0x63A1299: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 5280 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 5280 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 5280 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 5280 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n2: 5280 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 5280 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+        n1: 5280 0x40106C8: call_init.part.0 (dl-init.c:72)
+         n1: 5280 0x40107D9: _dl_init (dl-init.c:30)
+          n0: 5280 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 2240 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2240 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2240 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 2240 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2240 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 2240 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 2240 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 2240 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 5152 0x63A15B9: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 5152 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 5152 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 5152 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 5152 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 5152 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+       n1: 5152 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 5152 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 5152 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 3008 0x63A0E1B: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n2: 3008 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 2112 0x63A162C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 2112 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 2112 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 2112 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n2: 2112 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 2112 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+         n1: 2112 0x40106C8: call_init.part.0 (dl-init.c:72)
+          n1: 2112 0x40107D9: _dl_init (dl-init.c:30)
+           n0: 2112 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 896 in 1 place, below massif's threshold (1.00%)
+ n2: 2588 0x5948497: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 2557 0x5948C96: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+   n2: 2557 0x636AD6C: google::protobuf::internal::WireFormatLite::ReadString(google::protobuf::io::CodedInputStream*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n0: 1283 in 5 places, all below massif's threshold (1.00%)
+    n1: 1274 0x63A09F4: google::protobuf::FieldDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1274 0x63A130C: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1274 0x63A9922: google::protobuf::FileDescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1274 0x6369047: google::protobuf::MessageLite::ParseFromArray(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+        n1: 1274 0x63B21B4: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+         n2: 1274 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+          n1: 1274 0x5DE997A: aesm::message::protobuf_AddDesc_messages_2eproto() (in /usr/lib/x86_64-linux-gnu/libsgx_uae_service.so.1.0.102.0)
+           n1: 1274 0x40106C8: call_init.part.0 (dl-init.c:72)
+            n1: 1274 0x40107D9: _dl_init (dl-init.c:30)
+             n0: 1274 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 31 in 2 places, all below massif's threshold (1.00%)
+ n2: 1472 0x6369B25: google::protobuf::internal::RepeatedPtrFieldBase::Reserve(int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1184 0x63A18DB: google::protobuf::DescriptorProto::MergePartialFromCodedStream(google::protobuf::io::CodedInputStream*) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n0: 1184 in 2 places, all below massif's threshold (1.00%)
+  n0: 288 in 5 places, all below massif's threshold (1.00%)
+ n2: 1440 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1200 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1200 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1200 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n1: 1200 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+  n0: 240 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=3969736
+mem_heap_B=102793
+mem_heap_extra_B=4927
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=3973905
+mem_heap_B=99207
+mem_heap_extra_B=4409
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=3977938
+mem_heap_B=95712
+mem_heap_extra_B=3880
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=3981957
+mem_heap_B=91736
+mem_heap_extra_B=3136
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=3985989
+mem_heap_B=88255
+mem_heap_extra_B=2617
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=3990149
+mem_heap_B=84615
+mem_heap_extra_B=2041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=3994179
+mem_heap_B=80563
+mem_heap_extra_B=1341
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=4002402
+mem_heap_B=82955
+mem_heap_extra_B=1693
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=4006515
+mem_heap_B=87917
+mem_heap_extra_B=1827
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=4010754
+mem_heap_B=88475
+mem_heap_extra_B=2045
+mem_stacks_B=0
+heap_tree=detailed
+n6: 88475 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 8075 in 102 places, all below massif's threshold (1.00%)
+ n1: 4096 0x50C31D3: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 4096 0x50D1592: _IO_doallocbuf (genops.c:398)
+   n1: 4096 0x50D069A: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:556)
+    n1: 4096 0x50C4B26: getdelim (iogetdelim.c:73)
+     n1: 4096 0x517F3A8: __nss_database_lookup (nsswitch.c:576)
+      n1: 4096 0x51813DA: __nss_passwd_lookup2 (XXX-lookup.c:69)
+       n1: 4096 0x5121926: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:205)
+        n1: 4096 0x512114C: getpwuid (getXXbyYY.c:116)
+         n1: 4096 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+          n0: 4096 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+ n2: 1520 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1280 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1280 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1280 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 1280 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 80 in 1 place, below massif's threshold (1.00%)
+  n0: 240 in 1 place, below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+ n1: 1024 0x5121213: getpwuid (getXXbyYY.c:102)
+  n1: 1024 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+   n0: 1024 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+#-----------
+snapshot=75
+#-----------
+time=4019681
+mem_heap_B=84255
+mem_heap_extra_B=2241
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=4027245
+mem_heap_B=85517
+mem_heap_extra_B=2299
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=4031788
+mem_heap_B=86771
+mem_heap_extra_B=2349
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=4038042
+mem_heap_B=87035
+mem_heap_extra_B=2373
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=4074498
+mem_heap_B=87279
+mem_heap_extra_B=2401
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=4081505
+mem_heap_B=87406
+mem_heap_extra_B=2474
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=4092801
+mem_heap_B=88668
+mem_heap_extra_B=2516
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=4098462
+mem_heap_B=89934
+mem_heap_extra_B=2570
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=4107136
+mem_heap_B=90262
+mem_heap_extra_B=2594
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=4135932
+mem_heap_B=90462
+mem_heap_extra_B=2618
+mem_stacks_B=0
+heap_tree=detailed
+n7: 90462 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 8456 in 112 places, all below massif's threshold (1.00%)
+ n1: 4737 0x400BBF4: _dl_new_object (dl-object.c:75)
+  n1: 4737 0x400650B: _dl_map_object_from_fd (dl-load.c:1028)
+   n2: 4737 0x4008C25: _dl_map_object (dl-load.c:2498)
+    n1: 2371 0x4015585: dl_open_worker (dl-open.c:237)
+     n1: 2371 0x4010572: _dl_catch_error (dl-error.c:187)
+      n1: 2371 0x4014DB7: _dl_open (dl-open.c:660)
+       n1: 2371 0x51995AB: do_dlopen (dl-libc.c:87)
+        n1: 2371 0x4010572: _dl_catch_error (dl-error.c:187)
+         n1: 2371 0x5199662: __libc_dlopen_mode (dl-libc.c:46)
+          n1: 2371 0x517EFAC: nss_load_library (nsswitch.c:358)
+           n2: 2371 0x517F746: __nss_lookup_function (nsswitch.c:466)
+            n1: 1187 0x517F848: __nss_lookup (nsswitch.c:189)
+             n1: 1187 0x5121926: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:205)
+              n1: 1187 0x512114C: getpwuid (getXXbyYY.c:116)
+               n1: 1187 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                n0: 1187 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+            n1: 1184 0x6E62507: ???
+             n1: 1184 0x512181A: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:266)
+              n1: 1184 0x512114C: getpwuid (getXXbyYY.c:116)
+               n1: 1184 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                n0: 1184 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+    n1: 2366 0x400DBB0: openaux (dl-deps.c:63)
+     n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+      n1: 2366 0x400E1F0: _dl_map_object_deps (dl-deps.c:254)
+       n1: 2366 0x40155F0: dl_open_worker (dl-open.c:280)
+        n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+         n1: 2366 0x4014DB7: _dl_open (dl-open.c:660)
+          n1: 2366 0x51995AB: do_dlopen (dl-libc.c:87)
+           n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+            n1: 2366 0x5199662: __libc_dlopen_mode (dl-libc.c:46)
+             n1: 2366 0x517EFAC: nss_load_library (nsswitch.c:358)
+              n2: 2366 0x517F746: __nss_lookup_function (nsswitch.c:466)
+               n1: 1186 0x6E62507: ???
+                n1: 1186 0x512181A: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:266)
+                 n1: 1186 0x512114C: getpwuid (getXXbyYY.c:116)
+                  n1: 1186 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                   n0: 1186 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+               n1: 1180 0x517F848: __nss_lookup (nsswitch.c:189)
+                n1: 1180 0x5121926: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:205)
+                 n1: 1180 0x512114C: getpwuid (getXXbyYY.c:116)
+                  n1: 1180 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                   n0: 1180 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+ n2: 1520 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1280 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1280 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1280 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 1280 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 80 in 1 place, below massif's threshold (1.00%)
+  n0: 240 in 1 place, below massif's threshold (1.00%)
+ n1: 1056 0x6371ABE: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n0: 1056 in 11 places, all below massif's threshold (1.00%)
+ n1: 1024 0x5121213: getpwuid (getXXbyYY.c:102)
+  n1: 1024 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+   n0: 1024 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+ n1: 965 0x517EB33: nss_parse_service_list (nsswitch.c:642)
+  n0: 965 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=85
+#-----------
+time=4141694
+mem_heap_B=91174
+mem_heap_extra_B=2690
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=4189086
+mem_heap_B=90622
+mem_heap_extra_B=2674
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=4194478
+mem_heap_B=95270
+mem_heap_extra_B=2698
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=4208277
+mem_heap_B=95470
+mem_heap_extra_B=2754
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=4212790
+mem_heap_B=96294
+mem_heap_extra_B=2706
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=4219517
+mem_heap_B=92670
+mem_heap_extra_B=2690
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=4230224
+mem_heap_B=92622
+mem_heap_extra_B=2682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=4234814
+mem_heap_B=91614
+mem_heap_extra_B=2546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=4241567
+mem_heap_B=90110
+mem_heap_extra_B=2498
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=94
+#-----------
+time=4246048
+mem_heap_B=87899
+mem_heap_extra_B=1989
+mem_stacks_B=0
+heap_tree=detailed
+n5: 87899 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x58B2EFE: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21)
+  n1: 72704 0x40106C8: call_init.part.0 (dl-init.c:72)
+   n1: 72704 0x40107D9: _dl_init (dl-init.c:30)
+    n0: 72704 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+ n0: 7914 in 121 places, all below massif's threshold (1.00%)
+ n1: 4737 0x400BBF4: _dl_new_object (dl-object.c:75)
+  n1: 4737 0x400650B: _dl_map_object_from_fd (dl-load.c:1028)
+   n2: 4737 0x4008C25: _dl_map_object (dl-load.c:2498)
+    n1: 2371 0x4015585: dl_open_worker (dl-open.c:237)
+     n1: 2371 0x4010572: _dl_catch_error (dl-error.c:187)
+      n1: 2371 0x4014DB7: _dl_open (dl-open.c:660)
+       n1: 2371 0x51995AB: do_dlopen (dl-libc.c:87)
+        n1: 2371 0x4010572: _dl_catch_error (dl-error.c:187)
+         n1: 2371 0x5199662: __libc_dlopen_mode (dl-libc.c:46)
+          n1: 2371 0x517EFAC: nss_load_library (nsswitch.c:358)
+           n2: 2371 0x517F746: __nss_lookup_function (nsswitch.c:466)
+            n1: 1187 0x517F848: __nss_lookup (nsswitch.c:189)
+             n1: 1187 0x5121926: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:205)
+              n1: 1187 0x512114C: getpwuid (getXXbyYY.c:116)
+               n1: 1187 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                n0: 1187 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+            n1: 1184 0x6E62507: ???
+             n1: 1184 0x512181A: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:266)
+              n1: 1184 0x512114C: getpwuid (getXXbyYY.c:116)
+               n1: 1184 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                n0: 1184 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+    n1: 2366 0x400DBB0: openaux (dl-deps.c:63)
+     n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+      n1: 2366 0x400E1F0: _dl_map_object_deps (dl-deps.c:254)
+       n1: 2366 0x40155F0: dl_open_worker (dl-open.c:280)
+        n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+         n1: 2366 0x4014DB7: _dl_open (dl-open.c:660)
+          n1: 2366 0x51995AB: do_dlopen (dl-libc.c:87)
+           n1: 2366 0x4010572: _dl_catch_error (dl-error.c:187)
+            n1: 2366 0x5199662: __libc_dlopen_mode (dl-libc.c:46)
+             n1: 2366 0x517EFAC: nss_load_library (nsswitch.c:358)
+              n2: 2366 0x517F746: __nss_lookup_function (nsswitch.c:466)
+               n1: 1186 0x6E62507: ???
+                n1: 1186 0x512181A: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:266)
+                 n1: 1186 0x512114C: getpwuid (getXXbyYY.c:116)
+                  n1: 1186 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                   n0: 1186 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+               n1: 1180 0x517F848: __nss_lookup (nsswitch.c:189)
+                n1: 1180 0x5121926: getpwuid_r@@GLIBC_2.2.5 (getXXbyYY_r.c:205)
+                 n1: 1180 0x512114C: getpwuid (getXXbyYY.c:116)
+                  n1: 1180 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+                   n0: 1180 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+ n2: 1520 0x63B1044: ??? (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+  n1: 1280 0x63B5E5C: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddSymbol(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+   n1: 1280 0x63B60FE: google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<std::pair<void const*, int> >::AddFile(google::protobuf::FileDescriptorProto const&, std::pair<void const*, int>) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+    n1: 1280 0x63B21CC: google::protobuf::EncodedDescriptorDatabase::Add(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+     n2: 1280 0x63739B6: google::protobuf::DescriptorPool::InternalAddGeneratedFile(void const*, int) (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+      n1: 1200 0x63A248A: google::protobuf::protobuf_AddDesc_google_2fprotobuf_2fdescriptor_2eproto() (in /usr/lib/x86_64-linux-gnu/libprotobuf.so.9.0.1)
+       n1: 1200 0x40106C8: call_init.part.0 (dl-init.c:72)
+        n1: 1200 0x40107D9: _dl_init (dl-init.c:30)
+         n0: 1200 0x4000C68: ??? (in /lib/x86_64-linux-gnu/ld-2.23.so)
+      n0: 80 in 1 place, below massif's threshold (1.00%)
+  n0: 240 in 1 place, below massif's threshold (1.00%)
+ n1: 1024 0x5121213: getpwuid (getXXbyYY.c:102)
+  n1: 1024 0x402035: initialize_enclave() (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+   n0: 1024 0x4017A0: main (in /home/melody/rust-sgx-sdk/samplecode/nbody/bin/app)
+#-----------
+snapshot=95
+#-----------
+time=4250069
+mem_heap_B=83242
+mem_heap_extra_B=1742
+mem_stacks_B=0
+heap_tree=empty

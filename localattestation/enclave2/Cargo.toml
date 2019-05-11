@@ -1,0 +1,22 @@
+[package]
+name = "enclave2"
+version = "1.0.0"
+authors = ["Baidu"]
+
+
+[profile.release]
+incremental = false
+lto = true
+
+[lib]
+name = "enclave2"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+[target.'cfg(not(target_env = "sgx"))'.dependencies]
+sgx_types = { path = "../../../sgx_types" }
+
+[dependencies]
+attestation = {path = "../attestation/"}
