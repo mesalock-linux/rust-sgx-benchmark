@@ -32,19 +32,14 @@
 #![cfg_attr(not(target_env = "sgx"), no_std)]
 #![cfg_attr(target_env = "sgx", feature(rustc_private))]
 
+#![allow(non_snake_case)]
+
 extern crate sgx_types;
 #[cfg(not(target_env = "sgx"))]
 #[macro_use]
 extern crate sgx_tstd as std;
 use sgx_types::*;
-use std::string::String;
 use std::vec::Vec;
-use std::slice;
-use std::io::{self, Write};
-
-
-
-//#![allow(non_snake_case)]
 
 use std::iter::repeat;
 //use std::thread;
@@ -95,7 +90,7 @@ impl std::ops::Div for f64x2 {
 
 #[no_mangle]
 pub extern "C" fn uniform() -> sgx_status_t{
-    let n = 5500;
+    let n = 5500 * 4;
     let answer = spectralnorm(n);
     println!("{:.9}", answer);
     sgx_status_t::SGX_SUCCESS
@@ -151,14 +146,14 @@ fn dot(v: &[f64], u: &[f64]) -> f64 {
 struct Racy<T>(T);
 unsafe impl<T: 'static> Send for Racy<T> {}
 
-// Executes a closure in parallel over the given mutable slice. The closure `f`
-// is run in parallel and yielded the starting index within `v` as well as a
-// sub-slice of `v`.
+//// Executes a closure in parallel over the given mutable slice. The closure `f`
+//// is run in parallel and yielded the starting index within `v` as well as a
+//// sub-slice of `v`.
 fn parallel<'a, T, F>(v: &mut [T], ref f: F)
     where T: 'static + Send + Sync,
           F: Fn(usize, &mut [T]) + Sync {
     let size = v.len() / 4 + 1;
-    let jhs = v.chunks_mut(size).enumerate().map(|(i, chunk)| {
+    let _jhs = v.chunks_mut(size).enumerate().map(|(i, chunk)| {
         // Need to convert `f` and `chunk` to something that can cross the task
         // boundary.
         let f = Racy(f as *const F as *const usize);
@@ -169,8 +164,5 @@ fn parallel<'a, T, F>(v: &mut [T], ref f: F)
             unsafe { (*f)(i * size, std::slice::from_raw_parts_mut(raw.0, raw.1)) }
        
     }).collect::<Vec<_>>();
-    for jh in jhs { jh; }
+    //for jh in jhs { jh; }
 }
-
-
-
