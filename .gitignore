@@ -1,5 +1,7 @@
 results.txt
-Enclave_*
+Enclave_*.c
+Enclave_*.h
+Enclave_*.o
 **/app/*.o
 **/bin/app
 **/bin/enclave.*
