@@ -105,7 +105,7 @@ struct Planet {
 }
 
 fn advance(bodies: &mut [Planet;N_BODIES], dt: f64, steps: i32) {
-    for _ in (0..steps) {
+    for _ in 0..steps {
         let mut b_slice: &mut [_] = bodies;
         loop {
             let bi = match shift_mut_ref(&mut b_slice) {
@@ -184,7 +184,7 @@ let n = 50000000;
     println!("{:.9}", energy(&bodies));} 
 #[no_mangle]
 pub extern "C" fn uniform() -> sgx_status_t {
-   for x in 0..10
+   for _ in 0..10
 {
     loop_inside();
 } 
