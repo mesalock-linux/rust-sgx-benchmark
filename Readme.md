@@ -1,3 +1,7 @@
+# Attention
+
+C programs are **not the same** to Rust programs. Comparing the performance between Rust and C directly is meaningless. The only meaningful measurement is the **slowdown** of porting.
+
 # Instructions
 
 ```
