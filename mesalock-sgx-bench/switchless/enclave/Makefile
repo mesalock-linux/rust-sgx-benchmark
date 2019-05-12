@@ -28,7 +28,7 @@
 #
 Rust_Enclave_Name := libenclave.a
 Rust_Enclave_Files := $(wildcard src/*.rs)
-Rust_Target_Path := $(CURDIR)/../../../xargo
+Rust_Target_Path := $(CURDIR)/../../../rust-sgx-sdk/xargo
 
 .PHONY: all
 
