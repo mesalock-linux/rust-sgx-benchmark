@@ -157,7 +157,7 @@ static void generate_And_Wrap_Pseudorandom_DNA_Sequence(
 
 int main(int argc, char ** argv){
    const int n= 25000000;
-
+   for(int zzz=0;zzz<20;zzz++){
 //   fputs(">ONE Homo sapiens alu\n", stdout);
    const char homo_Sapiens_Alu[]=
      "GGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCGAGGCGGGCGGATCACCTGAGGTC"
@@ -181,6 +181,6 @@ int main(int argc, char ** argv){
    generate_And_Wrap_Pseudorandom_DNA_Sequence(
      homo_Sapien_Nucleotides_Information,
      sizeof(homo_Sapien_Nucleotides_Information)/sizeof(nucleotide_info), 5*n);
-
+    }
    return 0;
 }
