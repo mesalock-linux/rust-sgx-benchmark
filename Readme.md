@@ -45,3 +45,18 @@ Then process the generated results.txt
 | switchless-ocall         | 1.02866    |                   |             | 1.099590 |         |
 | switchless-normal-ecall  | 11.82719   |                   |             | 11.594337|         |
 | switchless-ecall         | 1.39487    |                   |             | 1.587854 |         |
+
+## Yu's Xeon E-2186G + 64GB ECC server. 2.5 toolchain
+
+|                          | ML-Rust-SGX| Fortanix-Rust-SGX | Rust-Linux  | C-SGX    | C-Linux |
+| ------------------------ | ---------- | ----------------- | ----------- | -------- | ------- |
+|  fann                    | 22.42678   |    26.50          |  23.18      | 21.22987 | 21.00   |
+|  fasta                   | 27.04513   |    30.27          |  27.31      | 11.31318 | 11.32   |
+|  mandel                  | 6.18571    |    9.52           |  6.16       | 25.25697 | 22.47   |
+|  nbody                   | 30.84538   |    32.83          |  30.38      | 34.15880 | 34.13   |
+| spectum                  | 24.55704   |    27.22          |  25.04      | 18.78764 | 18.74   |
+| localattest              | 19.84860   |                   |             | 19.777   |         |
+| switchless-normal-ocall  | 13.36452   |                   |             | 13.62250 |         |
+| switchless-ocall         | 1.16512    |                   |             | 1.19675  |         |
+| switchless-normal-ecall  | 15.73456   |                   |             | 15.46765 |         |
+| switchless-ecall         | 1.53158    |                   |             | 1.68042  |         |
