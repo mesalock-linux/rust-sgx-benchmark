@@ -1,6 +1,7 @@
 results.txt
 Enclave_*.c
 Enclave_*.h
+libEnclave_*.o
 Enclave_*.o
 **/app/*.o
 **/bin/app
