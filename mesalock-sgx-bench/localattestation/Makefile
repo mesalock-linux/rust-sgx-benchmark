@@ -69,8 +69,8 @@ endif
 
 CUSTOM_LIBRARY_PATH := ./lib
 CUSTOM_BIN_PATH := ./bin
-CUSTOM_EDL_PATH := ../../edl
-CUSTOM_COMMON_PATH := ../../common
+CUSTOM_EDL_PATH := ../../rust-sgx-sdk/edl
+CUSTOM_COMMON_PATH := ../../rust-sgx-sdk/common
 
 ######## EDL Settings ########
 
@@ -117,7 +117,7 @@ RustEnclave_C_Files := $(wildcard ./enclave1/*.c ./enclave2/*.c ./enclave3/*.c .
 RustEnclave_C_Objects := $(RustEnclave_C_Files:.c=.o)
 RustEnclave_Include_Paths := -I$(CUSTOM_COMMON_PATH)/inc -I$(CUSTOM_EDL_PATH) -I$(SGX_SDK)/include -I$(SGX_SDK)/include/tlibc -I$(SGX_SDK)/include/stlport -I$(SGX_SDK)/include/epid
 
-RustEnclave_Link_Libs := -L$(CUSTOM_LIBRARY_PATH) -lcompiler-rt-patch
+RustEnclave_Link_Libs := -L$(CUSTOM_LIBRARY_PATH)
 RustEnclave_Compile_Flags := $(SGX_COMMON_CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector $(RustEnclave_Include_Paths)
 RustEnclave_Link_Flags := $(SGX_COMMON_CFLAGS) -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles -L$(SGX_LIBRARY_PATH) \
 	-Wl,--whole-archive -l$(Trts_Library_Name) -l$(Service_Library_Name) -Wl,--no-whole-archive \
@@ -143,14 +143,14 @@ all: $(Enclave_EDL_Files) $(App_Name) $(Signed_RustEnclave1_Name) $(Signed_RustE
 ######## EDL Objects ########
 
 $(Enclave_EDL_Files): $(SGX_EDGER8R) enclave1/Enclave1.edl enclave2/Enclave2.edl enclave3/Enclave3.edl
-	$(SGX_EDGER8R) --use-prefix --trusted enclave1/Enclave1.edl --search-path $(SGX_SDK)/include --search-path ../../edl --trusted-dir enclave1
-	$(SGX_EDGER8R) --use-prefix --untrusted enclave1/Enclave1.edl --search-path $(SGX_SDK)/include --search-path ../../edl --untrusted-dir app
+	$(SGX_EDGER8R) --use-prefix --trusted enclave1/Enclave1.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --trusted-dir enclave1
+	$(SGX_EDGER8R) --use-prefix --untrusted enclave1/Enclave1.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --untrusted-dir app
 
-	$(SGX_EDGER8R) --use-prefix --trusted enclave2/Enclave2.edl --search-path $(SGX_SDK)/include --search-path ../../edl --trusted-dir enclave2
-	$(SGX_EDGER8R) --use-prefix --untrusted enclave2/Enclave2.edl --search-path $(SGX_SDK)/include --search-path ../../edl --untrusted-dir app
+	$(SGX_EDGER8R) --use-prefix --trusted enclave2/Enclave2.edl --search-path $(SGX_SDK)/include --search-path  $(CUSTOM_EDL_PATH) --trusted-dir enclave2
+	$(SGX_EDGER8R) --use-prefix --untrusted enclave2/Enclave2.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --untrusted-dir app
 
-	$(SGX_EDGER8R) --use-prefix --trusted enclave3/Enclave3.edl --search-path $(SGX_SDK)/include --search-path ../../edl --trusted-dir enclave3
-	$(SGX_EDGER8R) --use-prefix --untrusted enclave3/Enclave3.edl --search-path $(SGX_SDK)/include --search-path ../../edl --untrusted-dir app
+	$(SGX_EDGER8R) --use-prefix --trusted enclave3/Enclave3.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --trusted-dir enclave3
+	$(SGX_EDGER8R) --use-prefix --untrusted enclave3/Enclave3.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --untrusted-dir app
 
 	@echo "GEN  =>  $(Enclave_EDL_Files)"
 
@@ -176,7 +176,7 @@ app/UntrustedEnclaveMessageExchange.o: app/UntrustedEnclaveMessageExchange.cpp
 	@$(CXX) $(App_Cpp_Flags) -c $< -o $@
 
 $(App_Name): $(App_Cpp_Objects) app/Enclave1_u.o app/Enclave2_u.o app/Enclave3_u.o app/UntrustedEnclaveMessageExchange.o sgx_ustdc
-	cp ../../sgx_ustdc/libsgx_ustdc.a ./lib
+	cp ../../rust-sgx-sdk/sgx_ustdc/libsgx_ustdc.a ./lib
 	@$(CXX)  $(App_Cpp_Objects) app/Enclave1_u.o app/Enclave2_u.o app/Enclave3_u.o -o $@ $(App_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -188,8 +188,7 @@ enclave1/Enclave1_t.o: enclave1/Enclave1_t.c
 	@$(CC) $(RustEnclave_Compile_Flags) -c $< -o $@
 	@echo "CC   <=  $<"
 
-$(RustEnclave1_Name): enclave1 compiler-rt enclave1/Enclave1_t.o
-	cp ../../compiler-rt/libcompiler-rt-patch.a ./lib
+$(RustEnclave1_Name): enclave1 enclave1/Enclave1_t.o
 	@$(CXX) -flto enclave1/Enclave1_t.o -o $@ -lenclave1 $(RustEnclave_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -204,8 +203,7 @@ enclave2/Enclave2_t.o: enclave2/Enclave2_t.c
 	@$(CC) $(RustEnclave_Compile_Flags) -c $< -o $@
 	@echo "CC   <=  $<"
 
-$(RustEnclave2_Name): enclave2 compiler-rt enclave2/Enclave2_t.o
-	cp ../../compiler-rt/libcompiler-rt-patch.a ./lib
+$(RustEnclave2_Name): enclave2 enclave2/Enclave2_t.o
 	@$(CXX) -flto enclave2/Enclave2_t.o -o $@ -lenclave2 $(RustEnclave_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -219,8 +217,7 @@ enclave3/Enclave3_t.o: enclave3/Enclave3_t.c
 	@$(CC) $(RustEnclave_Compile_Flags) -c $< -o $@
 	@echo "CC   <=  $<"
 
-$(RustEnclave3_Name): enclave3 compiler-rt enclave3/Enclave3_t.o
-	cp ../../compiler-rt/libcompiler-rt-patch.a ./lib
+$(RustEnclave3_Name): enclave3 enclave3/Enclave3_t.o
 	@$(CXX) -flto enclave3/Enclave3_t.o -o $@ -lenclave3 $(RustEnclave_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -242,11 +239,11 @@ enclave3:
 
 .PHONY: compiler-rt
 compiler-rt:
-	$(MAKE) -C ../../compiler-rt/ 2> /dev/null
+	$(MAKE) -C ../../rust-sgx-sdk/compiler-rt/ 2> /dev/null
 
 .PHONY: sgx_ustdc
 sgx_ustdc:
-	$(MAKE) -C ../../sgx_ustdc/ 2> /dev/null
+	$(MAKE) -C ../../rust-sgx-sdk/sgx_ustdc/ 2> /dev/null
 
 .PHONY: clean
 clean:
