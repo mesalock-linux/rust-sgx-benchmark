@@ -1,0 +1,8 @@
+[package]
+name = "mandelbrot"
+version = "1.0.0"
+authors = ["Baidu"]
+
+[profile.release]
+lto = true
+
