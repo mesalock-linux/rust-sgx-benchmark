@@ -1,93 +1,60 @@
-//use std::io::Write;
-//use std::thread;
-const THREADS: usize = 20;
-const MAX_ITER: usize = 50;
-const VLEN: usize = 8;
-const ZEROS: Vecf64 = [0.0; VLEN];
+#![allow(non_snake_case)]
+pub fn main() {
+    let mut w: i32 = 0;
+    let mut h: i32 = 0;
+    let mut bit_num: i32 = 0;
 
-pub type Vecf64 = [f64; VLEN];
+    let mut byte_acc: u8 = 0;
 
-fn mul2 (x: Vecf64, y: Vecf64) -> Vecf64 {
-    let mut res = ZEROS;
-    for i in 0..VLEN { res[i] = x[i] * y[i]; }
-    res
-}
-fn add2 (x: Vecf64, y: Vecf64) -> Vecf64 {
-    let mut res = ZEROS;
-    for i in 0..VLEN { res[i] = x[i] + y[i]; }
-    res
-}
-fn sub2 (x: Vecf64, y: Vecf64) -> Vecf64 {
-    let mut res = ZEROS;
-    for i in 0..VLEN { res[i] = x[i] - y[i]; }
-    res
-}
+    let mut i: i32 = 0;
+    let mut iter: i32 = 50;
 
-pub fn mbrot8(cr: Vecf64, ci: Vecf64) -> u8 {
-    let mut zr = cr;
-    let mut zi = ci;
-    let mut esc_bits = 0;
-    for _ in 0..MAX_ITER {
-        // Find Re(z)^2 and Im(z)^2
-        let rr  = mul2(zr,zr);
-        let ii  = mul2(zi,zi);
-        // Check if we escape
-        // May as well store this info in
-        // same byte as output
-        let mag = add2(rr, ii);
-        for i in 0..VLEN {
-            if mag[i] > 4.0 { esc_bits |= 128 >> i; }
-        }
-        // If no more work, break early
-        if esc_bits == 0xff { break; }
-        // Find Im(z^2)
-        let ir = mul2(zr, zi);
-        // Set Re(z^2)
-        zr = sub2(rr, ii);
-        // Set Im(z^2)
-        zi = add2(ir, ir);
-        // Add c
-        zr = add2(zr, cr);
-        zi = add2(zi, ci);
-    }
-    !esc_bits
-}
+    let mut x:f64 = 0.0;
+    let mut y:f64 = 0.0;
+    let mut limit:f64 = 2.0;
+    let mut Zr:f64 = 0.0;
+    let mut Zi:f64 = 0.0;
+    let mut Cr:f64 = 0.0;
+    let mut Ci:f64 = 0.0;
+    let mut Tr:f64 = 0.0;
+    let mut Ti:f64 = 0.0;
 
-fn main() {
-    let size = 16000;
-    let inv = 2.0 / size as f64;
-    let mut xvals = vec![0.0; size];
-    let mut yvals = vec![0.0; size];
-    for i in 0..size {
-        xvals[i] = i as f64 * inv - 1.5;
-        yvals[i] = i as f64 * inv - 1.0;
-    }
-    let xloc = &xvals;
-    let yloc = &yvals;
+    w = 160000;
+    h = 160000;
 
-    assert!(size % THREADS == 0);// FIXME
-    let handles: Vec<_> = (0..THREADS).map(|e| {
-        let xloc = xloc.to_vec();
-        let yloc = yloc.to_vec();
-        let mut rows = vec![vec![0 as u8; size / 8]; size / THREADS];
-            for y in 0..size / THREADS {
-                for x in 0..size / 8 {
-                    let mut cr = ZEROS;
-                    let ci = [yloc[y + e * size / THREADS]; VLEN];
-                    for i in 0..VLEN {
-                        cr[i] = xloc[8 * x + i];
-                    }
-                    rows[y][x] = mbrot8(cr, ci);
-                }
+    println!("P4\n{} {}", w, h);
+
+    for y in 0..h {
+        for x in 0..w {
+            Zr = 0.0;
+            Zi = 0.0;
+            Tr = 0.0;
+            Ti = 0.0;
+            Cr = (2.0 * x as f64 / w as f64 - 1.5);
+            Ci = (2.0 * y as f64 / h as f64 - 1.0);
+
+            i = 0;
+            while i < iter && (Tr + Ti <= limit * limit) {
+                Zi = 2.0 * Zr * Zi + Ci;
+                Zr = Tr - Ti + Cr;
+                Tr = Zr * Zr;
+                Ti = Zi * Zi;
+                i = i + 1;
             }
-            rows
-    }).collect();
 
-    println!("P4\n{} {}", size, size);
-/*    let stdout_unlocked = std::io::stdout();
-    let mut stdout = stdout_unlocked.lock();
-    for row in handles.into_iter().flat_map(|h| h.into_iter()) {
-        stdout.write_all(&row).unwrap();
+            byte_acc = byte_acc << 1;
+            if Tr + Ti <= limit * limit {
+                byte_acc |= 0x01u8;
+            }
+
+            bit_num = bit_num + 1;
+
+            if bit_num == 8 {
+                byte_acc = byte_acc << (8 - w % 8);
+                byte_acc = 0;
+                bit_num = 0;
+            }
+        }
     }
-    stdout.flush().unwrap();*/
+    println!("bit_num = {}", bit_num);
 }

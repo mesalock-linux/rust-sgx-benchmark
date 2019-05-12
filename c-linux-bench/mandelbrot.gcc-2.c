@@ -8,7 +8,7 @@ int main (int argc, char **argv)
     double x, y, limit = 2.0;
     double Zr, Zi, Cr, Ci, Tr, Ti;
     
-    w = h = 16000;
+    w = h = 160000;
 
     printf("P4\n%d %d\n",w,h);
 
