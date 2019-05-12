@@ -1,7 +1,6 @@
 [dependencies]
 alloc = {}
 panic_unwind = {}
-panic_abort = {}
 
 [dependencies.std]
 path = "../../../rust-sgx-sdk/xargo/sgx_tstd"
