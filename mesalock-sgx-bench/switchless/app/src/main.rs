@@ -130,7 +130,7 @@ pub extern "C"
 fn ocall_empty_switchless() {
 }
 
-const REPEATS:u64 = 500000;
+const REPEATS:u64 = 5000000;
 
 fn benchmark_empty_ocall(eid : sgx_enclave_id_t,
                          is_switchless : u32) {
