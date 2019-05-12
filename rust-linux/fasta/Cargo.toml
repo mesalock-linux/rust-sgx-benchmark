@@ -1,5 +1,5 @@
 [package]
-name = "nbody"
+name = "fasta"
 version = "1.0.0"
 authors = ["Baidu"]
 

@@ -13,5 +13,5 @@ CUR=${PWD}
 for i in ${test_cases[@]}
 do
     echo "Testing ${i}" >> results.txt
-    cd ${i} && \time -a -o ${CUR}/results.txt cargo run --release && cargo clean && cd ..
+    cd ${i} && cargo b --release && \time -a -o ${CUR}/results.txt ./target/release/${i} --release && cargo clean && cd ..
 done
