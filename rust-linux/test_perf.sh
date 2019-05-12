@@ -8,8 +8,10 @@ test_cases=(fann \
 
 rm result.txt
 
+CUR=${PWD}
+
 for i in ${test_cases[@]}
 do
     echo "Testing ${i}" >> results.txt
-    cd ${i} && \time -a -o ../results.txt cargo run --release && cargo clean && cd ..
+    cd ${i} && \time -a -o ${CUR}/results.txt cargo run --release && cargo clean && cd ..
 done

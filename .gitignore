@@ -1,0 +1,10 @@
+results.txt
+Enclave_*
+**/app/*.o
+**/bin/app
+**/bin/enclave.*
+target
+libsgx_ustdc.a
+libenclave.*
+enclave*so
+Cargo.lock
