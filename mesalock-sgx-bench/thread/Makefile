@@ -31,6 +31,8 @@
 SGX_SDK ?= /opt/intel/sgxsdk
 SGX_MODE ?= HW
 SGX_ARCH ?= x64
+SGX_DEBUG = 0
+SGX_PRERELEASE = 1
 
 ifeq ($(shell getconf LONG_BIT), 32)
 	SGX_ARCH := x86
@@ -69,8 +71,8 @@ SGX_COMMON_CFLAGS += -L./lib
 
 CUSTOM_LIBRARY_PATH := ./lib
 CUSTOM_BIN_PATH := ./bin
-CUSTOM_EDL_PATH := ../../edl
-CUSTOM_COMMON_PATH := ../../common
+CUSTOM_EDL_PATH := ../../rust-sgx-sdk/edl
+CUSTOM_COMMON_PATH := ../../rust-sgx-sdk/common
 
 ######## EDL Settings ########
 
@@ -118,7 +120,7 @@ RustEnclave_C_Files := $(wildcard ./enclave/*.c)
 RustEnclave_C_Objects := $(RustEnclave_C_Files:.c=.o)
 RustEnclave_Include_Paths := -I$(CUSTOM_COMMON_PATH)/inc -I$(CUSTOM_EDL_PATH) -I$(SGX_SDK)/include -I$(SGX_SDK)/include/tlibc -I$(SGX_SDK)/include/stlport -I$(SGX_SDK)/include/epid -I ./enclave -I./include
 
-RustEnclave_Link_Libs := -L$(CUSTOM_LIBRARY_PATH) -lcompiler-rt-patch -lenclave
+RustEnclave_Link_Libs := -L$(CUSTOM_LIBRARY_PATH) -lenclave
 RustEnclave_Compile_Flags := $(SGX_COMMON_CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector $(RustEnclave_Include_Paths)
 RustEnclave_Link_Flags := $(SGX_COMMON_CFLAGS) -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles -L$(SGX_LIBRARY_PATH) \
 	-Wl,--whole-archive -l$(Trts_Library_Name) -l$(Service_Library_Name) -Wl,--no-whole-archive \
@@ -139,8 +141,8 @@ all: $(Enclave_EDL_Files) $(App_Name) $(Signed_RustEnclave_Name)
 ######## EDL Objects ########
 
 $(Enclave_EDL_Files): $(SGX_EDGER8R) enclave/Enclave.edl
-	$(SGX_EDGER8R) --trusted enclave/Enclave.edl --search-path $(SGX_SDK)/include --search-path ../../edl --trusted-dir enclave
-	$(SGX_EDGER8R) --untrusted enclave/Enclave.edl --search-path $(SGX_SDK)/include --search-path ../../edl --untrusted-dir app
+	$(SGX_EDGER8R) --trusted enclave/Enclave.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --trusted-dir enclave
+	$(SGX_EDGER8R) --untrusted enclave/Enclave.edl --search-path $(SGX_SDK)/include --search-path $(CUSTOM_EDL_PATH) --untrusted-dir app
 	@echo "GEN  =>  $(Enclave_EDL_Files)"
 
 ######## App Objects ########
@@ -154,7 +156,7 @@ app/%.o: app/%.cpp
 	@echo "CXX  <=  $<"
 
 $(App_Name): app/Enclave_u.o $(App_Cpp_Objects) sgx_ustdc
-	cp ../../sgx_ustdc/libsgx_ustdc.a ./lib
+	cp ../../rust-sgx-sdk/sgx_ustdc/libsgx_ustdc.a ./lib
 	@$(CXX) app/Enclave_u.o $(App_Cpp_Objects) -o $@ $(App_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -164,8 +166,7 @@ enclave/Enclave_t.o: enclave/Enclave_t.c
 	@$(CC) $(RustEnclave_Compile_Flags) -c $< -o $@
 	@echo "CC   <=  $<"
 
-$(RustEnclave_Name): enclave compiler-rt enclave/Enclave_t.o
-	cp ../../compiler-rt/libcompiler-rt-patch.a ./lib
+$(RustEnclave_Name): enclave enclave/Enclave_t.o
 	@$(CXX) -flto enclave/Enclave_t.o -o $@ $(RustEnclave_Link_Flags)
 	@echo "LINK =>  $@"
 
@@ -183,7 +184,7 @@ compiler-rt:
 
 .PHONY: sgx_ustdc
 sgx_ustdc:
-	$(MAKE) -C ../../sgx_ustdc/ 2> /dev/null
+	$(MAKE) -C ../../rust-sgx-sdk/sgx_ustdc/ 2> /dev/null
 
 .PHONY: clean
 clean:
