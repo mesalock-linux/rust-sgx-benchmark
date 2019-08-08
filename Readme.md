@@ -2,6 +2,8 @@
 
 C programs are **not the same** to Rust programs. Comparing the performance between Rust and C directly is meaningless. The only meaningful measurement is the **slowdown** of porting.
 
+**Note: The results are shown in the following are from single time running.**
+
 # Instructions
 
 ```
@@ -60,3 +62,19 @@ Then process the generated results.txt
 | switchless-ocall         | 1.16512    |                   |             | 1.19675  |         |
 | switchless-normal-ecall  | 15.73456   |                   |             | 15.46765 |         |
 | switchless-ecall         | 1.53158    |                   |             | 1.68042  |         |
+
+## Xeon E-2174G + 16GB ECC desktop. 2.4 toolchain
+
+|                          | ML-Rust-SGX| Fortanix-Rust-SGX | Rust-Linux  | C-SGX    | C-Linux |
+| ------------------------ | ---------- | ----------------- | ----------- | -------- | ------- |
+|  fann                    | 23.669     |    27.01          |  24.12      | 19.85568 | 19.21   |
+|  fasta                   | 27.912     |    30.65          |  28.34      | 11.63968 | 11.61   |
+|  mandel                  | 6.539      |    9.84           |  7.81       | 26.07015 | 22.64   |
+|  nbody                   | 31.202     |    33.23          |  31.36      | 34.73364 | 34.64   |
+| spectum                  | 25.482     |    28.26          |  25.60      | 19.58611 | 19.53   |
+| localattest              | 20.74600   |                   |             | 20.655   |         |
+| switchless-normal-ocall  | 14.63948   |                   |             | 14.45144 |         |
+| switchless-ocall         | 1.350154   |                   |             | 1.311325 |         |
+| switchless-normal-ecall  | 17.16921   |                   |             | 17.15061 |         |
+| switchless-ecall         | 1.935309   |                   |             | 1.924318 |         |
+| thread                   | 0.209      |                   |             | 0.208    |         | 
