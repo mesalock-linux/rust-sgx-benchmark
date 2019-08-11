@@ -36,7 +36,7 @@ using namespace std;
 
 #include "../App.h"
 #include "Enclave_u.h"
-
+#define REPEATS 100
 static size_t counter = 0;
 
 void increase_counter(void)
@@ -84,22 +84,24 @@ void ecall_thread_functions(void)
 */
     printf("Info: executing thread synchronization, please wait...  \n");
     /* condition variable */
-    thread consumer1(data_consumer);
-    thread producer0(data_producer);
-    thread producer1(data_producer);
-    thread producer2(data_producer);
-    thread producer3(data_producer);
-    thread consumer2(data_consumer);
-    thread consumer3(data_consumer);
-    thread consumer4(data_consumer);
-    
-    consumer1.join();
-    consumer2.join();
-    consumer3.join();
-    consumer4.join();
-    producer0.join();
-    producer1.join();
-    producer2.join();
-    producer3.join();
+    while (nrepeats--){
+        thread consumer1(data_consumer);
+        thread producer0(data_producer);
+        thread producer1(data_producer);
+        thread producer2(data_producer);
+        thread producer3(data_producer);
+        thread consumer2(data_consumer);
+        thread consumer3(data_consumer);
+        thread consumer4(data_consumer);
+
+        consumer1.join();
+        consumer2.join();
+        consumer3.join();
+        consumer4.join();
+        producer0.join();
+        producer1.join();
+        producer2.join();
+        producer3.join();
+    }
     printf("Info: thread finish \n");
 }
