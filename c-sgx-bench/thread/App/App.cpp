@@ -33,7 +33,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-
+#include <time.h>
 # include <unistd.h>
 # include <pwd.h>
 # define MAX_PATH FILENAME_MAX
@@ -191,7 +191,13 @@ int SGX_CDECL main(int argc, char *argv[])
         return -1; 
     }
  
+    struct timespec tstart={0,0}, tend={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &tstart);
     ecall_thread_functions();
+    clock_gettime(CLOCK_MONOTONIC, &tend);
+    printf("ecall took about %.5f seconds\n",
+           ((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) -
+           ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec));
 
     /* Destroy the enclave */
     sgx_destroy_enclave(global_eid);
