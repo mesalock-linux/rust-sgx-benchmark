@@ -82,6 +82,7 @@ void ecall_thread_functions(void)
 
     assert(counter == 4*LOOPS_PER_THREAD);
 */
+    unsigned long nrepeats = REPEATS;
     printf("Info: executing thread synchronization, please wait...  \n");
     /* condition variable */
     while (nrepeats--){
