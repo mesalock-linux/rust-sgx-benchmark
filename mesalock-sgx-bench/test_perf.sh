@@ -3,7 +3,8 @@ test_cases=(fann \
             localattestation \
             mandelbrot \
             nbody \
-            spectum)
+            spectum \
+            thread)
 
 # Todo: Tweak the remaining samples for perf bench
 
