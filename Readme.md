@@ -77,4 +77,4 @@ Then process the generated results.txt
 | switchless-ocall         | 1.350154   |                   |             | 1.311325 |         |
 | switchless-normal-ecall  | 17.16921   |                   |             | 17.15061 |         |
 | switchless-ecall         | 1.935309   |                   |             | 1.924318 |         |
-| thread                   | 16.6646    |                   |             | 16.3163  |         | 
+| thread                   | 9.52413    |                   |             | 9.79178  |         | 
