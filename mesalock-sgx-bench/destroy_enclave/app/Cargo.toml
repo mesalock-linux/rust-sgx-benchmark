@@ -1,0 +1,17 @@
+[package]
+name = "app"
+version = "1.0.0"
+authors = ["Baidu"]
+build = "build.rs"
+
+[dependencies]
+sgx_types = { path = "../../../rust-sgx-sdk/sgx_types" }
+sgx_urts = { path = "../../../rust-sgx-sdk/sgx_urts" }
+dirs = "1.0.2"
+
+[profile.release]
+lto = true
+
+[patch.'https://github.com/baidu/rust-sgx-sdk.git']
+sgx_types = { path = "../../../rust-sgx-sdk/sgx_types" }
+sgx_urts = { path = "../../../rust-sgx-sdk/sgx_urts" }

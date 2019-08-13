@@ -78,3 +78,16 @@ Then process the generated results.txt
 | switchless-normal-ecall  | 17.16921   |                   |             | 17.15061 |         |
 | switchless-ecall         | 1.935309   |                   |             | 1.924318 |         |
 | thread                   | 9.52413    |                   |             | 9.79178  |         | 
+
+## Yu's 9900k+64GB Non ECC desktop. 2.5 toolchain
+
+create_enclave and destroy_enclave perfromance test [result](https://docs.google.com/spreadsheets/d/1HGGhQs3JFvm24Y7j4mdOSItU_-hRwbo6IcFttPz-ch0/edit?usp=sharing)
+
+Rust-SGX create enclave average time = 0.002683090276s, var = 0.0000001723163121 (average needs to minus 60ns for time measurement)
+C-SGX    create enclave average time = 0.002541857303s, var = 0.0000005211093912
+
+Rust-SGX destroy enclave average time = 0.0001088015614, var = 0.00000000116750652 (average needs to minus 60ns for time measurement)
+C-SGX    destroy enclave average time = 0.0001058573786, var = 0.000000001800703517
+
+create enclave performance overhead = (0.002683090276 - 0.00000006) / 0.002541857303 = 5.55%
+destroy enclave performance overhead = (0.0001088015614 - 0.00000006) / 0.0001058573786 = 2.72%
