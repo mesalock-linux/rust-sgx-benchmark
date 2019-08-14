@@ -131,28 +131,35 @@ fn bench_sgx_self_report() {
 
 fn bench_sgx_seal_data() {
     let aad: [u8; 0] = [0_u8; 0];
-    let mut payload: [u8;4096] = [0;4096];
+    let mut payload: Vec<u8> = vec![0;100000];
     let mut rnd = sgx_rand::StdRng::new().unwrap();
     rnd.fill_bytes(&mut payload);
-    let start = Instant::now();
-    for _ in 0..TEST_COUNT {
-        let _ = SgxSealedData::<[u8]>::seal_data(&aad, &payload);
+    let mut sz = 1;
+    for _ in 0..6 {
+        let start = Instant::now();
+        for _ in 0..TEST_COUNT {
+            let _ = SgxSealedData::<[u8]>::seal_data(&aad, &payload[..sz]);
+        }
+        println!("sgx_seal_data size = {}, {:?}", sz, start.elapsed());
+        sz *= 10;
     }
-    println!("sgx_seal_data, {:?}", start.elapsed());
 }
 
 fn bench_sgx_unseal_data() {
     let aad: [u8; 0] = [0_u8; 0];
-    let mut payload: [u8;4096] = [0;4096];
+    let mut payload: Vec<u8> = vec![0;100000];
     let mut rnd = sgx_rand::StdRng::new().unwrap();
     rnd.fill_bytes(&mut payload);
-    let sealed = SgxSealedData::<[u8]>::seal_data(&aad, &payload).unwrap();
-
-    let start = Instant::now();
-    for _ in 0..TEST_COUNT {
-        let _= sealed.unseal_data();
+    let mut sz = 1;
+    for _ in 0..6 {
+        let start = Instant::now();
+        let d = SgxSealedData::<[u8]>::seal_data(&aad, &payload[..sz]).unwrap();
+        for _ in 0..TEST_COUNT {
+            let _ = d.unseal_data();
+        }
+        println!("sgx_seal_data size = {}, {:?}", sz, start.elapsed());
+        sz *= 10;
     }
-    println!("sgx_unseal_data, {:?}", start.elapsed());
 }
 
 fn bench_sgx_fopen() {
