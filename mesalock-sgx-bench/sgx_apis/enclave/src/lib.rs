@@ -164,10 +164,41 @@ fn bench_sgx_unseal_data() {
 fn bench_sgx_fopen() {
     use std::sgxfs::SgxFile;
     let _ = SgxFile::create("sgx_file").unwrap();
+
+    let report = sgx_tse::rsgx_self_report();
+    let key_policy = SGX_KEYPOLICY_MRSIGNER;
+    let isv_svn = report.body.isv_svn;
+    let reserved1 = 0u16;
+    let cpu_svn = report.body.cpu_svn;
+    let attribute_mask = sgx_attributes_t{flags: TSEAL_DEFAULT_FLAGSMASK, xfrm: 0};
+    let key_id = sgx_key_id_t::default();
+    let misc_mask = 0;
+    let config_svn = report.body.config_svn;
+    let reserved2 = [0u8; SGX_KEY_REQUEST_RESERVED2_BYTES];
+
+    let kr: sgx_key_request_t = sgx_key_request_t {
+        key_name: SGX_KEYSELECT_SEAL,
+        key_policy,
+        isv_svn,
+        reserved1,
+        cpu_svn,
+        attribute_mask,
+        key_id,
+        misc_mask,
+        config_svn,
+        reserved2};
+
+    let k = sgx_tse::rsgx_get_key(&kr).unwrap();
+
     let start = Instant::now();
+    let fname = std::ffi::CString::new("sgx_file").unwrap();
+    let r = std::ffi::CString::new("w").unwrap();
     for _ in 0..TEST_COUNT {
-        let _ = SgxFile::open("sgx_file").unwrap();
-    }
+        let _ = sgx_tprotected_fs::SgxFileStream::open(
+            &fname,
+            &r,
+            &k).unwrap();
+    };
     println!("sgx_fopen, {:?}", start.elapsed());
 }
 
