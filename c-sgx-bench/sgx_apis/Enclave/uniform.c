@@ -216,6 +216,13 @@ void bench_sgx_import_autokey() {
 }
 
 int uniform(){
+    struct my_timespec tstart, tend;
+    ocall_get_timestamp(&tstart);
+    ocall_get_timestamp(&tend);
+    printf("time measurement cost = %.9f\n",
+           ((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) -
+           ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec));
+    ocall_get_timestamp(&tstart);
     bench_sgx_get_key();
     bench_sgx_create_report();
     bench_sgx_verify_report();
