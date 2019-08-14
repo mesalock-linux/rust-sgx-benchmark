@@ -39,6 +39,8 @@ use std::path;
 static ENCLAVE_FILE: &'static str = "enclave.signed.so";
 static ENCLAVE_TOKEN: &'static str = "enclave.token";
 
+const TEST_COUNT: usize = 100000;
+
 extern {
     fn sgx_api_bench(eid: sgx_enclave_id_t, retval: *mut sgx_status_t) -> sgx_status_t;
 }
@@ -123,6 +125,9 @@ fn main() {
         },
     };
 
+    measure_init_quote();
+    measure_sgx_calc_quote_size();
+
     let mut retval = sgx_status_t::SGX_SUCCESS;
 
     let result = unsafe {
@@ -141,4 +146,25 @@ fn main() {
     println!("[+] say_something success...");
 
     enclave.destroy();
+}
+
+fn measure_init_quote() {
+    let mut eg: sgx_epid_group_id_t = sgx_epid_group_id_t::default();
+    let mut ti: sgx_target_info_t = sgx_target_info_t::default();
+    use std::time::Instant;
+    let start_time = Instant::now();
+    for _ in 0..TEST_COUNT {
+        unsafe { sgx_init_quote(&mut ti as * mut _, &mut eg as * mut _) };
+    }
+    eprintln!("sgx_init_quote, {:?}", start_time.elapsed());
+}
+
+fn measure_sgx_calc_quote_size() {
+    use std::time::Instant;
+    let start_time = Instant::now();
+    let mut result: u32 = 0;
+    for _ in 0..TEST_COUNT {
+        unsafe { sgx_calc_quote_size(std::ptr::null(), 0, &mut result) };
+    }
+    eprintln!("sgx_calc_quote_size, {:?}", start_time.elapsed());
 }
