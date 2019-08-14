@@ -55,8 +55,6 @@ use sgx_tseal::SgxSealedData;
 
 #[no_mangle]
 pub extern "C" fn sgx_api_bench() -> sgx_status_t {
-    bench_sgx_export_autokey();
-    bench_sgx_import_autokey();
     bench_sgx_get_key();    
     bench_sgx_create_report();
     bench_sgx_verify_report();
@@ -66,6 +64,7 @@ pub extern "C" fn sgx_api_bench() -> sgx_status_t {
     bench_sgx_fopen();
     bench_sgx_fopen_autokey();
     bench_sgx_export_autokey();
+    bench_sgx_import_autokey();
     sgx_status_t::SGX_SUCCESS
 }
 
@@ -192,7 +191,7 @@ fn bench_sgx_export_autokey() {
     for _ in 0..TEST_COUNT {
         let _ = sgx_tprotected_fs::export_auto_key(&p).unwrap();
     };
-    println!("sgx_export_autokey, {:?}", start.elapsed());
+    println!("sgx_fexport_autokey, {:?}", start.elapsed());
 }
 
 fn bench_sgx_import_autokey() {
@@ -204,5 +203,5 @@ fn bench_sgx_import_autokey() {
         let ak = sgx_tprotected_fs::export_auto_key(&p).unwrap();
         let _ = sgx_tprotected_fs::import_auto_key(&p, &ak).unwrap();
     };
-    println!("sgx_import_autokey + sgx_export_autokey, {:?}", start.elapsed());
+    println!("sgx_fimport_autokey + sgx_fexport_autokey, {:?}", start.elapsed());
 }
