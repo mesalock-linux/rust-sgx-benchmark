@@ -91,3 +91,4 @@ C-SGX    destroy enclave average time = 0.0001058573786, var = 0.000000001800703
 
 create enclave performance overhead = (0.002683090276 - 0.00000006) / 0.002541857303 = 5.55%
 destroy enclave performance overhead = (0.0001088015614 - 0.00000006) / 0.0001058573786 = 2.72%
+
